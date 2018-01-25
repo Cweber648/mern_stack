@@ -1,5 +1,6 @@
+import IssueAdd from './IssueAdd.jsx';
+
 const contentNode = document.getElementById('contents');
-import IssueAdd from "./IssueAdd.jsx";
 
 class IssueFilter extends React.Component {
   render() {
