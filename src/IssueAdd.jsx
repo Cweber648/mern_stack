@@ -1,3 +1,4 @@
+import React from 'react';
 
 export default class IssueAdd extends React.Component {
  constructor() {
@@ -29,4 +30,9 @@ export default class IssueAdd extends React.Component {
 }
 
 
-
+// Terminal Commands
+// // node_modules/.bin/webpack --watch
+// node_modules/.bin/webpack-dev-server
+// mongod
+// mongo
+// npm start

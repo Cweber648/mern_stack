@@ -18,15 +18,18 @@ MongoClient.connect('mongodb://localhost/issuetracker').then(connection => {
   console.log('ERROR:', error);
 });
 
-app.get('/api/issues', (req, res) => {
-  db.collection('issues').find().toArray().then(issues => {
-    const metadata = { total_count: issues.length };
-    res.json({ _metadata: metadata, records: issues })
-  }).catch(error => {
-    console.log(error);
-    res.status(500).json({ message: `Internal Server Error: ${error}` })
-  });
-});
+if (process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const config = require('../webpack.config');
+  config.entry.app.push('webpack-hot-middleware/client',
+    'webpack/hot/only-dev-server');
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  const bundler = webpack(config);
+  app.use(webpackDevMiddleware(bundler, { noInfo: true }));
+  app.use(webpackHotMiddleware(bundler, { log: console.log }));
+}
 
 app.post('/api/issues', (req, res) => {
   const newIssue = req.body;

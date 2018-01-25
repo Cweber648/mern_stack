@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -w server  server/server.js",
     "compile": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack-dev-server  --hot --inline"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +24,15 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "nodemon": "^1.14.11",
-    "webpack": "^3.10.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-hot-middleware": "^2.21.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }
