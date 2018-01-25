@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel src --presets react,es2015 --out-dir static",
-    "watch": "babel src --presets react,es2015 --out-dir static --watch",
+    "compile": "webpack",
+    "watch": "webpack --watch",
     "start": "nodemon -w server  server/server.js"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-react": "^6.24.1",
     "nodemon": "^1.14.11",
     "webpack": "^3.10.0"
