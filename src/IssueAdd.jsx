@@ -1,10 +1,9 @@
 
-class IssueAdd extends React.Component {
-  constructor() {
+export default class IssueAdd extends React.Component {
+ constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleSubmit(e) {
     e.preventDefault();
     var form = document.forms.issueAdd;
@@ -26,6 +25,8 @@ class IssueAdd extends React.Component {
           <button>Add</button>
         </form>
       </div>
-    )
-  }
+) }
 }
+
+
+
